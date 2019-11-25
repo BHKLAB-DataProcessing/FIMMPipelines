@@ -1,0 +1,49 @@
+{
+  "pipeline": {
+    "name": "getfimm"
+  },
+  "transform": {
+    "image": "bhklab/pharmacogx:v5",
+    "cmd": [
+      "Rscript", "/pfs/getFIMM/getFIMM.R"]
+    },
+  
+  "resource_requests": {
+    "memory": "100M"
+  },
+  "input": {
+    "cross": [
+      {
+        "git": {
+          "url": "https://github.com/BHKLAB-Pachyderm/getFIMM.git",
+          "name": "getFIMM",
+          "branch": "master"
+        }
+      },
+      {
+        "pfs": {
+          "repo": "downAnnotations",
+          "glob": "/"
+        }
+      },
+      {
+        "pfs": {
+          "repo": "downFIMM",
+          "glob": "/"
+        }
+      },
+      {
+        "pfs": {
+          "repo": "calculateFIMM",
+          "glob": "/"
+        }
+      },
+      {
+        "pfs": {
+          "repo": "SliceAssemble",
+          "glob": "/"
+        }
+      }
+    ]
+  }
+}
