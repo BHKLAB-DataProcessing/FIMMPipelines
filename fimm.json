@@ -1,6 +1,6 @@
 {
   "pipeline": {
-    "name": "getfimm"
+    "name": "fimm"
   },
   "transform": {
     "image": "bhklab/pharmacogx:v5",
@@ -23,6 +23,12 @@
       {
         "pfs": {
           "repo": "downAnnotations",
+          "glob": "/"
+        }
+      },
+      {
+        "pfs": {
+          "repo": "processFIMM",
           "glob": "/"
         }
       },
