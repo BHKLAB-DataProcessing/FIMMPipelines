@@ -1,0 +1,31 @@
+{
+  "pipeline": {
+    "name": "downFIMM"
+  },
+  "transform": {
+    "image": "bhklab/pharmacogx:v5",
+    "cmd": [
+      "/bin/bash", "/pfs/downloadFIMM/download.sh"]
+    },
+  
+  "resource_requests": {
+    "memory": "100M"
+  },
+  "input": {
+    "cross": [
+      {
+        "git": {
+          "url": "https://github.com/BHKLAB-Pachyderm/downloadFIMM.git",
+          "name": "downloadFIMM",
+          "branch": "master"
+        }
+      },
+      {
+        "pfs": {
+          "repo": "gdscProfilesV1",
+          "glob": "/"
+        }
+      }
+    ]
+  }
+}
