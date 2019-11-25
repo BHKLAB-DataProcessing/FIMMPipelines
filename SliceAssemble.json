@@ -1,0 +1,32 @@
+{
+  "pipeline": {
+    "name": "SliceAssemble"
+  },
+  "transform": {
+    "image": "bhklab/pharmacogx:v5",
+    "cmd": [
+      "Rscript", "/pfs/FIMMAssemble/assemble.R"]
+    },
+  
+  "resource_requests": {
+    "memory": "100M"
+  },
+  "input": {
+    "cross": [
+      {
+        "git": {
+          "url": "https://github.com/BHKLAB-Pachyderm/FIMMAssemble.git",
+          "name": "",
+          "branch": "master"
+        }
+      },
+      {
+        "pfs": {
+          "repo": "calculateFIMM",
+          "name":"input",
+          "glob": "/"
+        }
+      }
+    ]
+  }
+}
