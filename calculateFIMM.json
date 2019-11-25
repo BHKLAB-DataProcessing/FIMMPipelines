@@ -1,0 +1,36 @@
+{
+  "pipeline": {
+    "name": "calculateFIMM"
+  },
+  "transform": {
+    "image": "bhklab/pharmacogx:v5",
+    "cmd": [
+      "Rscript", 
+      "/pfs/FIMMRecalculateFromRaw/recalculateSlice.R"]
+    },
+  "parallelism_spec":{
+    "constant": 3
+  },
+  "resource_requests": {
+    "memory": "1.0G",
+    "cpu": 0.1
+  },
+  "input": {
+    "cross": [
+      {
+        "git": {
+          "url": "https://github.com/BHKLAB-Pachyderm/FIMMRecalculateFromRaw.git",
+          "name": "FIMMRecalculateFromRaw",
+          "branch": "master"
+        }
+      },
+      {
+        "pfs": {
+          "repo": "processFIMM",
+          "name": "input",
+          "glob": "/slices/*"
+        }
+      } 
+    ]
+  }
+}
