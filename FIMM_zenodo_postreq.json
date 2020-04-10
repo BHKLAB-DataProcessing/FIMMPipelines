@@ -1,6 +1,6 @@
 {
   "pipeline": {
-    "name": "fimm_zenodo_postreq"
+    "name": "FIMM_zenodo_postreq"
   },
   "transform": {
     "image": "bhklab/python_zenodo",
