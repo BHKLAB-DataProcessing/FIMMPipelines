@@ -5,7 +5,7 @@
   "transform": {
     "image": "bhklab/pharmacogx:v5",
     "cmd": [
-      "Rscript", "/pfs/getFIMM/getFIMM.R"]
+      "Rscript", "/pfs/getFIMM/getFIMM.R", "asgjkssd27361293"]
     },
   
   "resource_requests": {
