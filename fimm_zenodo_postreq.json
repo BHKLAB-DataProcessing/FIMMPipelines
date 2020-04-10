@@ -24,7 +24,7 @@
       
       {
         "pfs": {
-          "repo": "getFIMM",
+          "repo": "fimm",
           "name": "input",
           "glob": "/"
         }
