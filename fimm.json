@@ -3,7 +3,7 @@
     "name": "fimm"
   },
   "transform": {
-    "image": "bhklab/pharmacogx2.0:v1",
+    "image": "bhklab/pharmacogx2.0:v3",
     "cmd": [
       "Rscript", "/pfs/getFIMM/getFIMM.R", "asgjkssd27361293"]
     },
